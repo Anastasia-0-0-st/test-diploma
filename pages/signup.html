@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--На данной странице необходимо предусмотреть возможность ввода логина
+и пароля для зарегистрированных пользователей.
+Попытки некорректного ввода логина и пароля должны сопровождаться сообщениями.-->
+<header class="header-b-border mb-2" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-lg">
+            <a href="#" class="navbar-brand">logo</a>
+            <div class="navbar-nav  ">
+                <a class="nav-link" href="/index.html">Заявления</a>
+                <a class="nav-link" href="/pages/formingStatement.html">Сформировать заявления</a>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-outline-secondary">Войти</button>
+                <button class="btn btn-secondary">Зарегистрироваться</button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container-md">
+    <div class="row justify-content-center">
+        <h2 class="text-center">Авторизация</h2>
+        <form class="was-validated col-4 col-md-6 col-sm-10 form-border my-3 p-3 ">
+            <div class="mb-3">
+                <label for="login" class="my-2">Ведите логин</label>
+                <input type="text" id="login"  class="form-control " placeholder="Введите сюда ваш логин" data-mdb-input-mask-init data-mdb-input-mask="+48 999-999-999" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="my-2">Ведите Пароль</label>
+                <input type="password" id="password" min="6" class="form-control " placeholder="Введите сюда ваш логин" required>
+            </div>
+            <button class="btn btn-primary ">Войти</button>
+        </form>
+    </div>
+</main>
+
+<script>
+    let loginField = document.querySelector('#login');
+    // let regLogin = /^\w+$/;
+    let regLogin = /^[A-Za-z0-9]+$/;
+    loginField.addEventListener('blur', () => {
+        console.log(e.target)
+        if(!regLogin.test(loginField.value)) {
+            loginField.style.backgroundColor = 'red';
+        } else {
+            loginField.style.backgroundColor = 'white';
+
+        }
+    })
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

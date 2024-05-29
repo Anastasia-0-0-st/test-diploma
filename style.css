@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-border {
+    border: 1px solid #d2d2d2;
+    border-radius: 6px;
+}
+
+.header-b-border {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.link_more {
+    color: #6c757d;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.link_more:hover {
+    color: #212529;
+}
